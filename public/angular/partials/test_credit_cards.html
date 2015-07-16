@@ -1,153 +1,133 @@
 
-<h3>Successful credit cards </h3>
+<h3>Good Credit Cards </h3>
+    <div class="row">
 
-<table>
-    <thead>
-    <tr>
-        <th>Test Value</th>
-        <th>Card Type</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">378282246310005</code></td>
-        <td>American Express</td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">371449635398431</code></td>
-        <td>American Express</td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">6011111111111117</code></td>
-        <td>Discover</td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">3530111333300000</code></td>
-        <td>JCB</td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">6304000000000000</code></td>
-        <td>Maestro</td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">5555555555554444</code></td>
-        <td>Mastercard</td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">4111111111111111</code></td>
-        <td>Visa</td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">4005519200000004</code></td>
-        <td>Visa</td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">4009348888881881</code></td>
-        <td>Visa  </td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">4012000033330026</code></td>
-        <td>Visa</td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">4012000077777777</code></td>
-        <td>Visa</td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">4012888888881881</code></td>
-        <td>Visa</td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">4217651111111119</code></td>
-        <td>Visa</td>
-    </tr>
-    <tr>
-        <td><code class="syntax-inline syntax-inline--theme">4500600000000061</code></td>
-        <td>Visa</td>
-    </tr>
-    </tbody>
-</table>
-
-<div>
-    <h3>Unsuccessful credit cards </h3>
     <div class="col-md-6">
-        <p>Errors are generated based on test amounts</p>
-        <table>
+
+        <table class="table">
             <thead>
             <tr>
-                <th>Test Value</th>
+                <th>Card Number</th>
                 <th>Card Type</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td><code class="syntax-inline syntax-inline--theme">4000111111111115</code></td>
-                <td>Visa</td>
-            </tr>
-            <tr>
-                <td><code class="syntax-inline syntax-inline--theme">5105105105105100</code></td>
-                <td>MasterCard</td>
-            </tr>
-            <tr>
-                <td><code class="syntax-inline syntax-inline--theme">378734493671000</code></td>
+                <td class="cc-number">378282246310005</td>
                 <td>American Express</td>
             </tr>
             <tr>
-                <td><code class="syntax-inline syntax-inline--theme">6011000990139424</code></td>
+                <td class="cc-number">371449635398431</td>
+                <td>American Express</td>
+            </tr>
+            <tr>
+                <td class="cc-number">6011111111111117</td>
                 <td>Discover</td>
             </tr>
             <tr>
-                <td><code class="syntax-inline syntax-inline--theme">3566002020360505</code></td>
+                <td class="cc-number">5555555555554444</td>
+                <td>Mastercard</td>
+            </tr>
+            <tr>
+                <td class="cc-number">4111111111111111</td>
+                <td>Visa</td>
+            </tr>
+            <tr>
+                <td class="cc-number">4005519200000004</td>
+                <td>Visa</td>
+            </tr>
+            <tr>
+                <td class="cc-number">3530111333300000</td>
+                <td>JCB</td>
+            </tr>
+            <tr>
+                <td class="cc-number">6304000000000000</td>
+                <td>Maestro</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <h3>Bad Credit Cards </h3>
+    <div class="col-md-6">
+        <h4>Errors are only generated based on amounts</h4>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Card Number</th>
+                <th>Card Type</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="cc-number">4000111111111115</td>
+                <td>Visa</td>
+            </tr>
+            <tr>
+                <td class="cc-number">5105105105105100</td>
+                <td>MasterCard</td>
+            </tr>
+            <tr>
+                <td class="cc-number">378734493671000</td>
+                <td>American Express</td>
+            </tr>
+            <tr>
+                <td class="cc-number">6011000990139424</td>
+                <td>Discover</td>
+            </tr>
+            <tr>
+                <td class="cc-number">3566002020360505</td>
                 <td>JCB</td>
             </tr>
             </tbody>
         </table>
     </div>
     <div class="col-md-6">
-        <h4>Test Amounts</h4>
-        <table>
+        <table class="table-condensed cc-test-amount-table">
             <thead>
             <tr>
-                <th>Amount</th>
-                <th>Processor Response</th>
+                <th class="amount">Amount</th>
+                <th class="amount-desc">Processor Response</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>$0.01 - $1999.99</td>
-                <td><em>Authorized</em></td>
+                <td class="amount">$0.01 - $1999.99</td>
+                <td class="amount-desc">Authorized</td>
             </tr>
             <tr>
-                <td>$2000.00 - $2077.99</td>
-                <td><em>Processor Declined</em> with the processor response equal to the amount</td>
+                <td class="amount error">$2000.00 - $2077.99</td>
+                <td class="amount-desc">Processor Declined with the processor response equal to the amount</td>
             </tr>
             <tr>
-                <td>$2078.00 - $2999.99</td>
-                <td><em>Processor Declined</em> with a decline code equal to the amount</td>
+                <td class="amount error">$2078.00 - $2999.99</td>
+                <td class="amount-desc">Processor Declined with a decline code equal to the amount</td>
             </tr>
             <tr>
-                <td>$3000.00 - $3000.99</td>
-                <td><em>Processor Declined</em> with the processor response equal to the amount</td>
+                <td class="amount error">$3000.00 - $3000.99</td>
+                <td class="amount-desc">Processor Declined with the processor response equal to the amount</td>
             </tr>
             <tr>
-                <td>$3001.00 - $4000.99</td>
-                <td><em>Authorized</em></td>
+                <td class="amount">$3001.00 - $4000.99</td>
+                <td class="amount-desc">Authorized</td>
             </tr>
             <tr>
-                <td>$4001.00</td>
+                <td class="amount error">$4001.00</td>
                 <td>Settlement Declined on PayPal transactions</td>
             </tr>
             <tr>
-                <td>$4002.00</td>
+                <td class="amount error">$4002.00</td>
                 <td>Settlement Pending on PayPal transactions</td>
             </tr>
             <tr>
-                <td>$4002.01 - $5000.99</td>
-                <td><em>Authorized</em></td>
+                <td class="amount">$4002.01 - $5000.99</td>
+                <td class="amount-desc">Authorized</td>
             </tr>
             <tr>
-                <td>$5001.01 and up</td>
-                <td><em>Authorized</em></td>
+                <td class="amount">$5001.01 and up</td>
+                <td class="amount-desc">Authorized</td>
             </tr>
             </tbody>
         </table>

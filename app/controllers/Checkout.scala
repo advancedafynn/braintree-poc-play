@@ -56,6 +56,6 @@ object Checkout {
 
     Ok(JsonFormats.getTransactionResultJson(result))
 
-    //Ok("{\"success\":\"true\"}")
+    //Ok("{\"success\":true}")
   }
 }

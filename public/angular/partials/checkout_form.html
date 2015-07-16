@@ -1,5 +1,5 @@
 
-<form class="form-horizontal" role="form">
+<form class="form-horizontal css-form">
 
     <fieldset>
 
@@ -33,7 +33,8 @@
             <label class="col-md-3 control-label" for="firstName">Product</label>
             <div class="input col-md-4">
                 <select type="text" id="product" ng-model="form_data.product"
-                        ng-options="product.name as product.name for product in controller.products" required />
+                        ng-options="product.name as product.name for product in controller.products"
+                        ng-init="form_data.product = controller.products[0].name" ngRequired />
             </div>
         </div>
 
@@ -42,9 +43,10 @@
         <div class="form-group" id="country_field">
             <label class="col-md-3 control-label" for="country">Country</label>
             <div class="input col-md-5">
-                <select id="country"
+                <select  id="country"
                         ng-model="form_data.card.country"
-                        ng-options="country.name as country.name for country in controller.countries" required />
+                        ng-options="country.name as country.name for country in controller.countries"
+                         ng-init="form_data.card.country = controller.countries[0].name"  ngRequired />
             </div>
         </div>
 
@@ -105,6 +107,5 @@
         </div>
 
         </fieldset>
-
 
 </form>

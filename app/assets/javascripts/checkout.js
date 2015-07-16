@@ -22,24 +22,54 @@
         this.checkout = function(form_data){
             $log.debug("form_data", form_data);
 
-            var url = '/checkout/token';
+            var validateResult = this.validateFormData(form_data)
 
-            $http.get(url).
-                success(function(data, status, headers, config) {
-                    $log.debug("success!", data);
-                    self.chargeCard(data, form_data);
-                }).
-                error(function(data, status, headers, config) {
-                    $log.error("error", data);
-                });
+            if(validateResult){
+                this.setErrorMessage(validateResult)
+            }
+            else {
+                var url = '/checkout/token';
+
+                this.disablePay()
+
+                $http.get(url).
+                    success(function(data, status, headers, config) {
+                        $log.debug("success!", data);
+                        self.chargeCard(data, form_data);
+                    }).
+                    error(function(data, status, headers, config) {
+                        $log.error("error", data);
+                    });
+            }
+
+
         }
 
 
+        this.validateFormData = function(form_data){
+            var errorMessage = "Please complete required fields"
+            var result = null;
+
+            this.setErrorMessage("")
+
+            if(!form_data.customer || !form_data.product || !form_data.card) {
+                result = errorMessage
+            }
+            else {
+                if(!form_data.customer.firstName || !form_data.customer.lastName || !form_data.customer.number
+                || !form_data.card.number || !form_data.card.expirationDate  || !form_data.card.country
+                || !form_data.card.amount ) {
+                    result = errorMessage
+                }
+
+            }
+
+            return result
+        }
 
         this.chargeCard =function(ctoken, form_data){
 
             $log.debug("Charging card ... ", form_data.card);
-            $log.debug(" token : ", ctoken);
 
             var braintreeClient = new braintree.api.Client({clientToken: ctoken});
 
@@ -75,6 +105,7 @@
                     self.handlePayResponse(data)
                 }).
                 error(function(data, status, headers, config) {
+                    self.enablePay()
                     $log.error("error", data);
                 });
         }
@@ -104,8 +135,9 @@
         }
 
         this.handlePayResponse = function(data){
+            this.enablePay()
             $log.debug("response", data);
-            if (data.success == "true"){
+            if (data.success == true){
                 this.setSuccessMessage()
             }
             else {
@@ -114,16 +146,27 @@
         }
 
         this.showCheckout = function(){
-            $scope.screen = 'checkout'
-            $scope.form_data = ""
+            this.initialize()
         }
 
         this.showSuccess = function(){
             $scope.screen = 'success'
         }
 
+
+
         this.initialize = function(){
-            this.showCheckout()
+            if($scope.form_data){
+                if($scope.form_data.customer) {
+                    $scope.form_data.customer = ""
+                }
+                if($scope.form_data.card) {
+                    if($scope.form_data.card.amount) {
+                        $scope.form_data.card.amount = ""
+                    }
+                }
+            }
+            $scope.screen = 'checkout'
         }
 
         this.initialize();
