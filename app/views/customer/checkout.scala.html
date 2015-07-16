@@ -13,8 +13,8 @@
 
     <div class="container">
         <div class="row" ng-controller="CheckoutController as controller">
+            <checkout-success ng-show="screen == 'success'"></checkout-success>
             <div class="col-md-6">
-                <checkout-success ng-show="screen == 'success'"></checkout-success>
                 <checkout-form ng-show="screen == 'checkout'"></checkout-form>
             </div>
             <div class="col-md-6">
