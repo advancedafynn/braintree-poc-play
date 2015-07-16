@@ -13,8 +13,8 @@
         ]
 
         this.products = [
-            {'name': 'Elliot', 'id':1},
-            {'name': 'Survey', 'id':2}
+            {'name': 'eleot', 'id':1},
+            {'name': 'survey', 'id':2}
         ]
 
         var SUCCESS_MESSAGE = "Transaction has been successfully created at Braintree"
@@ -92,24 +92,34 @@
 
 
         this.setSuccessMessage =  function(){
-            $log.debug("setting success message");
             $scope.successMessage = SUCCESS_MESSAGE
-            $scope.screen = 'success'
+            $scope.errorMessage = ""
+            this.showSuccess()
+        }
+
+        this.setErrorMessage =  function(error){
+            $scope.successMessage = ""
+            $scope.errorMessage = error
+            $scope.screen = 'checkout'
         }
 
         this.handlePayResponse = function(data){
             $log.debug("response", data);
             if (data.success == "true"){
-                self.setSuccessMessage()
+                this.setSuccessMessage()
             }
             else {
-                self.errorMessage = data.message
+                this.setErrorMessage(data.message)
             }
         }
 
         this.showCheckout = function(){
             $scope.screen = 'checkout'
             $scope.form_data = ""
+        }
+
+        this.showSuccess = function(){
+            $scope.screen = 'success'
         }
 
         this.initialize = function(){
