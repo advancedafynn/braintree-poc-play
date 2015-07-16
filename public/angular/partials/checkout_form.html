@@ -1,0 +1,110 @@
+
+<form class="form-horizontal" role="form">
+
+    <fieldset>
+
+        <legend> Customer </legend>
+
+        <div class="form-group" id="firstName_field">
+            <label class="col-md-3 control-label" for="firstName">First Name</label>
+            <div class="input col-md-4">
+                <input type="text" id="firstName" ng-model="form_data.customer.firstName" required />
+            </div>
+        </div>
+
+        <div class="form-group" id="lastName_field">
+            <label class="col-md-3 control-label" for="lastName">Last Name</label>
+            <div class="input col-md-4">
+                <input type="text" id="lastName"  ng-model="form_data.customer.lastName" required />
+            </div>
+        </div>
+
+        <div class="form-group" id="c_number_field">
+            <label class="col-md-3 control-label" for="c_number">Customer Number</label>
+            <div class="input col-md-4">
+                <input type="text" id="c_number"  ng-model="form_data.customer.number" required />
+            </div>
+        </div>
+
+
+        <legend> Product </legend>
+
+        <div class="form-group" id="product_field">
+            <label class="col-md-3 control-label" for="firstName">Product</label>
+            <div class="input col-md-4">
+                <select type="text" id="product" ng-model="form_data.product"
+                        ng-options="product.name as product.name for product in controller.products" required />
+            </div>
+        </div>
+
+        <legend> Payment </legend>
+
+        <div class="form-group" id="country_field">
+            <label class="col-md-3 control-label" for="country">Country</label>
+            <div class="input col-md-5">
+                <select id="country"
+                        ng-model="form_data.card.country"
+                        ng-options="country.name as country.name for country in controller.countries" required />
+            </div>
+        </div>
+
+        <div class="form-group" id="number_field">
+            <label class="col-md-3 control-label" for="number">Number</label>
+            <div class="input col-md-5">
+                <input type="text" id="number" ng-model="form_data.card.number" required />
+            </div>
+        </div>
+
+        <div class="form-group" id="cvv_field">
+            <label class="col-md-3 control-label" for="cvv">CVV</label>
+            <div class="input col-md-5">
+                <input type="text" id="cvv" ng-model="form_data.card.cvv" placeholder="ddd" />
+            </div>
+        </div>
+
+
+        <div class="form-group" id="expiration_date_field">
+            <label class="col-md-3 control-label" for="number">Expiration</label>
+            <div class="input col-md-5">
+                <input type="text" id="expiration_date" ng-model="form_data.card.expirationDate" placeholder="MM/YY" required />
+            </div>
+        </div>
+
+
+        <div class="form-group" id="postal_code_field">
+            <label class="col-md-3 control-label" for="number">Postal Code</label>
+            <div class="input col-md-5">
+                <input type="text" id="postal_code" ng-model="form_data.card.postalCode" />
+            </div>
+        </div>
+
+
+        <div class="form-group" id="cardholder_name_field">
+            <label class="col-md-3 control-label" for="number">Holder Name</label>
+            <div class="input col-md-5">
+                <input type="text" id="cardholder_name" ng-model="form_data.card.cardholderName" />
+            </div>
+        </div>
+
+
+
+        <div class="form-group" id="cardholder_amount_field">
+            <label class="col-md-3 control-label" for="amount">Amount</label>
+            <div class="input col-md-5">
+                <input type="text" id="amount" ng-model="form_data.card.amount" required />
+            </div>
+        </div>
+
+        <div>
+            <div class="col-md-5">
+                <p class="error"> {{errorMessage}}</p>
+            </div>
+            <div class="col-md-1 ">
+                <input type="submit" class="btn btn-primary" value="Pay" ng-click="controller.checkout(form_data)">
+            </div>
+        </div>
+
+        </fieldset>
+
+
+</form>

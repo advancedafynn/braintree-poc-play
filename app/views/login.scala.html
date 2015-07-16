@@ -1,0 +1,48 @@
+@(loginForm: play.api.data.Form[models.UserLogin])
+
+@import helper.twitterBootstrap._
+
+@htmlTagInclude = {}
+@headTagInclude = {}
+@bodyTagInclude = {}
+
+@main("Login", htmlTagInclude, headTagInclude, bodyTagInclude ) {
+
+    <div class="container">
+        <form action = routes.Application.login()>
+
+            <fieldset>
+                <legend> Registration </legend>
+
+
+                <div class="clearfix  " id="email_field">
+                    <label for="email">Email</label>
+                    <div class="input">
+
+                        <input type="text" id="email" ng-model="user.email" />
+
+                        <span class="help-inline"></span>
+                        <span class="help-block">Required</span>
+                    </div>
+                </div>
+
+                <div class="clearfix  " id="password_field">
+                    <label for="firstName">First Name</label>
+                    <div class="input">
+
+                        <input type="text" id="password" ng-model="user.firstName"  />
+
+                        <span class="help-inline"></span>
+                        <span class="help-block">Required</span>
+                    </div>
+                </div>
+
+            </fieldset>
+            <input type="submit" class="btn btn-primary" value="Register" >
+
+        </form>
+
+
+    </div>
+
+}

@@ -1,0 +1,26 @@
+@htmlTagInclude = {ng-app="CustomerApp"}
+@headTagInclude = {}
+@bodyTagInclude = {}
+
+@scripts = {
+    <script type="text/javascript" src='@routes.Assets.at("/public", "javascripts/checkout.js")'></script>
+    <script type="text/javascript" src='@routes.Assets.at("/public", "javascripts/customers.js")'></script>
+    <script type="text/javascript" src='@routes.Assets.at("/public", "javascripts/customer.js")'></script>
+    <script type="text/javascript" src="https://js.braintreegateway.com/v2/braintree.js"></script>
+}
+
+@user_main("Checkout", htmlTagInclude, headTagInclude, bodyTagInclude, scripts) {
+
+    <div class="container">
+        <div class="row" ng-controller="CheckoutController as controller">
+            <div class="col-md-6">
+                <checkout-success ng-show="screen == 'success'"></checkout-success>
+                <checkout-form ng-show="screen == 'checkout'"></checkout-form>
+            </div>
+            <div class="col-md-6">
+                <test-credit-cards></test-credit-cards>
+            </div>
+        </div>
+    </div>
+
+}

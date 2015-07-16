@@ -1,0 +1,48 @@
+@(title: String, htmlTagInclude: Html, headTagInclude: Html, bodyTagInclude: Html)(content: Html)
+
+<!DOCTYPE html>
+
+<html @htmlTagInclude>
+    <head @headTagInclude>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("/public", "stylesheets/bootstrap.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("/public", "stylesheets/main.min.css")">
+    </head>
+    <body @bodyTagInclude>
+
+
+            <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Braintree Test</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        @*<li><a href="@routes.Application.login()">Login</a></li>*@
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        @content
+
+        <footer>
+            <hr/>
+            <div>
+                <span>&copy; AdvancED 2015</span>
+            </div>
+            <div>
+                <span app-version></span>
+            </div>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,13 @@
+New log file opened at Thu Jul 09 08:15:45 EDT 2015 by 22907@mac-afynn.hq.advanc-ed.org
+Taking next connection to: 50566
+New client attempting to connect on port: 50567-50566
+  Address = /10.1.10.9:50566
+This client on port 50567 has uuid 131a0755-d38d-489c-89b2-b4fcedaabba9 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-131a0755-d38d-489c-89b2-b4fcedaabba9
+Taking next connection to: 50566
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 22907@mac-afynn.hq.advanc-ed.org logs at Thu Jul 09 08:18:47 EDT 2015, goodbye.
