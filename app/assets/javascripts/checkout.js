@@ -8,8 +8,10 @@
         var self = this
 
         this.countries = [
-            {'name': 'United States', 'id':1},
-            {'name':  'Netherlands', 'id':2}
+            {'name': 'United States', 'id':'United States'},
+            {'name':  'Netherlands', 'id':'Netherlands'},
+            {'name':  'Egypt', 'id':'Netherlands'},
+            {'name':  'India', 'id':'Netherlands'}
         ]
 
         this.products = [
